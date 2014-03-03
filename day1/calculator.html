@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Calculator</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<h1>Calculator</h1>
+		<p>Calculator: First field is a number, second an operator, third a number.</p>
+		<form onsubmit="return solve();">
+			<input id="num1" type="text">
+			<input id="operator" type="text">
+			<input id="num2" type="text">
+			<input type="submit" value="Solve">
+		</form>
+		<p id="result"></p>
+		<script type="text/javascript">
+			function solve(){
+				var num1 = document.getElementById("num1").value;
+				var operator = document.getElementById("operator").value;
+				var num2 = document.getElementById("num2").value;
+				var num1i= parseInt(num1);
+				var num2i= parseInt(num2);		
+					
+				if(operator == "+") {
+					var answer= num1i+num2i;
+				}
+				else if(operator == "-") {
+					var answer= num1i-num2i;
+				}
+				else if(operator == "*") {
+					var answer= num1i*num2i;
+				}
+				else if(operator == "/") {
+					var answer= num1i / num2i;
+				}
+				
+				document.getElementById("result").innerHTML = "Result: " +  answer;				
+				return false;
+			}
+			</script>
+	</body>
+</html>
